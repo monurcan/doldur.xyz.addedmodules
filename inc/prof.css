@@ -3,7 +3,6 @@
   margin-bottom: 10px;
 }
 img[alt="www.000webhost.com"]{display:none;}
-.card-section {overflow: hidden;}
 .rating-block-rating {
   display: -webkit-flex;
   display: -ms-flexbox;
