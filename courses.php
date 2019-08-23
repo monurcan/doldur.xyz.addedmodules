@@ -73,11 +73,11 @@
   </section>
 </nav>
 
-<div style="max-width:50rem" class="row ">
+<div style="max-width:50rem" class="row collapse">
 <br>
 <p>Search for a course or a lecturer.</p>
 <input type="text" id="course-name" >
-<div class="row expand">
+<div class="row expand collapse">
 <div class="columns small-8">
 <small>Course database last updated: <?php echo date ("d F Y H:i:s.", filemtime(getcwd()."/inc/data.json")); ?> Summer School 2018-2019 <div id="course-data-loading">Loading course data...</div><div id="place-data-loading">Loading place data...</div></small>
 </div>

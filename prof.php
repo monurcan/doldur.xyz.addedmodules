@@ -46,7 +46,7 @@ $means = array_map(function ($val) use ($count){return number_format((float)($va
             ?>
           </div>
         </div>
-        <div class="columns small-1" style="padding-left: 10px;"><?php echo $means[0]; ?></div>
+        <div class="columns small-1 text-center"><?php echo $means[0]; ?></div>
       </div>
       <div class="rating-block row collapse">
         <div class="columns small-6">
@@ -67,7 +67,7 @@ $means = array_map(function ($val) use ($count){return number_format((float)($va
             ?>
           </div>
         </div>
-        <div class="columns small-1" style="padding-left: 10px;"><?php echo $means[1]; ?></div>
+        <div class="columns small-1 text-center"><?php echo $means[1]; ?></div>
       </div>
       <div class="rating-block row collapse">
         <div class="columns small-6">
@@ -88,7 +88,7 @@ $means = array_map(function ($val) use ($count){return number_format((float)($va
             ?>
           </div>
         </div>
-        <div class="columns small-1" style="padding-left: 10px;"><?php echo $means[2]; ?></div>
+        <div class="columns small-1 text-center"><?php echo $means[2]; ?></div>
       </div>
       <div class="rating-block row collapse">
         <div class="columns small-6">
@@ -109,7 +109,7 @@ $means = array_map(function ($val) use ($count){return number_format((float)($va
             ?>
           </div>
         </div>
-        <div class="columns small-1" style="padding-left: 10px;"><?php echo $means[3]; ?></div>
+        <div class="columns small-1 text-center"><?php echo $means[3]; ?></div>
       </div>
       <div class="rating-block row collapse">
         <div class="columns small-6">
@@ -130,7 +130,7 @@ $means = array_map(function ($val) use ($count){return number_format((float)($va
             ?>
           </div>
         </div>
-        <div class="columns small-1" style="padding-left: 10px;"><?php echo $means[4]; ?></div>
+        <div class="columns small-1 text-center"><?php echo $means[4]; ?></div>
       </div>
       <div class="rating-block row collapse">
         <div class="columns small-6">
@@ -151,7 +151,7 @@ $means = array_map(function ($val) use ($count){return number_format((float)($va
             ?>
           </div>
         </div>
-        <div class="columns small-1" style="padding-left: 10px;"><?php echo $means[5]; ?></div>
+        <div class="columns small-1 text-center"><?php echo $means[5]; ?></div>
       </div>
     </div>
 </div>
@@ -163,7 +163,7 @@ $means = array_map(function ($val) use ($count){return number_format((float)($va
     <ul>
       <li><strong class="s<?php echo $comment["pr0"] ?>"><?php echo $comment["pr0"] ?></strong><small>GRADING</small></li>
       <li><strong class="s<?php echo $comment["pr1"] ?>"><?php echo $comment["pr1"] ?></strong><small>HELPFUL</small></li>
-      <li><strong class="s<?php echo $comment["pr2"] ?>"><?php echo $comment["pr2"] ?></strong><small>NO HWS</small></li>
+      <li><strong class="s<?php echo $comment["pr2"] ?>"><?php echo $comment["pr2"] ?></strong><small>NO HW</small></li>
       <li><strong class="s<?php echo $comment["pr3"] ?>"><?php echo $comment["pr3"] ?></strong><small>NO ATD</small></li>
       <li><strong class="s<?php echo $comment["pr4"] ?>"><?php echo $comment["pr4"] ?></strong><small>LECTURING</small></li>
       <li><strong class="s<?php echo $comment["pr5"] ?>"><?php echo $comment["pr5"] ?></strong><small>GENERAL</small></li>

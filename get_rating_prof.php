@@ -15,5 +15,5 @@ foreach ($c as $rate){
 	$total += $rate["pr5"];
 	$number++;
 }
-die($total/$number);
+die(number_format((float)($total/$number), 2, '.', ''));
 ?>

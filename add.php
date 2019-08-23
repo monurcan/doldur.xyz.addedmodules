@@ -403,7 +403,7 @@ function details(){
     <!-- Left Nav Section -->
   </section>
 </nav>
-<div style="max-width:50rem" class="row">
+<div style="max-width:50rem" class="row collapse">
 
 <?php details(); ?>
 
