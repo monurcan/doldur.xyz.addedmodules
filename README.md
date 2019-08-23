@@ -6,3 +6,5 @@ doldur.xyz w/ some new tools
 - grade tool
 
 demo: https://doldurxyz.000webhostapp.com
+
+to install, execute comments.sql first.
