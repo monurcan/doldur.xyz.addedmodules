@@ -1,0 +1,325 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Scheduler for METU courses.">
+	<meta name="keywords" content="METU,ODTÜ,schedule,scheduler">
+	<title>doldur.xyz</title>
+	<link rel="stylesheet" href="/inc/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="/inc/foundation/css/normalize.css">
+	<link rel="stylesheet" href="/inc/foundation/css/foundation.min.css">
+	<link rel="icon" type="image/png" href="/inc/img/fav.png">
+	<script src="/inc/foundation/js/vendor/modernizr.js"></script>
+	<style type="text/css">img[alt="www.000webhost.com"]{display:none;}</style>
+</head>
+<body>
+<nav class="top-bar" style="background-color: #8e44ad;margin-bottom:10px" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="./"><b>doldur.xyz</b></a></h1>
+    </li>
+    <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="left">
+			
+					<li class=""><a href="#" data-reveal-id="about-modal">About</a></li>
+					<li class="has-dropdown">
+						<a href="#">Goodies</a>
+						<ul class="dropdown">
+							<li><a href="/">Scheduler</a></li>
+							<li><a href="gpa.html">(C)GPA Calculator</a></li>
+							<li><a href="courses.php">Course/Teacher Ratings</a></li>
+							<li><a href="https://oibs2.metu.edu.tr//View_Course_Capacity_158/main.php">Course Capacity</a></li>
+							<li><a href="http://105.metutrolls.com/">PHYS105 Solutions</a></li>
+						</ul>
+					</li>
+			
+    </ul>
+    <!-- Left Nav Section -->
+  </section>
+</nav>
+
+<div style="max-width:40rem" class="row ">
+	<form id="h">
+					<div class="mt">
+						<div class="row">
+								<div class="small-5 columns"><label for="mt1">Midterm 1</label><input id="mt1" type="number" placeholder="Grade" /></div>
+								<div class="small-5 columns"><label><br></label><input id="mtt1" type="number" placeholder="%" /></div>
+								<div class="small-2 columns"><label><br></label><a style="height:2.3125rem; padding-top: .5rem" href="#" class="button expand add" id="mt">+</a></div>
+						</div>
+						<div class="row hide">
+								<div class="small-5 columns"><label for="mt2">Midterm 2</label><input id="mt2" type="number" placeholder="Grade" /></div>
+								<div class="small-5 columns"><label><br></label><input id="mtt2" type="number" placeholder="%" /></div>
+								<div class="small-2 columns"></div>
+						</div>
+						<div class="row hide">
+								<div class="small-5 columns"><label for="mt3">Midterm 3</label><input id="mt3" type="number" placeholder="Grade" /></div>
+								<div class="small-5 columns"><label><br></label><input id="mtt3" type="number" placeholder="%" /></div>
+								<div class="small-2 columns"></div>
+						</div>
+						<div class="row hide">
+								<div class="small-5 columns"><label for="mt4">Midterm 4</label><input id="mt4" type="number" placeholder="Grade" /></div>
+								<div class="small-5 columns"><label><br></label><input id="mtt4" type="number" placeholder="%" /></div>
+								<div class="small-2 columns"></div>
+						</div>
+					</div>
+						<div class="row">
+								<div class="small-5 columns"><label for="fin">Final</label><input id="fin" type="number" placeholder="Grade" /></div>
+								<div class="small-5 columns"><label><br></label><input id="finn" type="number" placeholder="%" /></div>
+								<div class="small-2 columns"></div>
+						</div>
+					<div class="other">
+						<div class="row">
+								<div class="small-5 columns"><label for="o1">Others</label><input id="o1" type="number" placeholder="Grade" /></div>
+								<div class="small-5 columns"><label><br></label><input id="oo1" type="number" placeholder="%" /></div>
+								<div class="small-2 columns"><label><br></label><a style="height:2.3125rem; padding-top: .5rem" href="#" class="button add expand" id="other">+</a></div>
+						</div>
+						<div class="row hide">
+								<div class="small-5 columns"><label for="o2">Others</label><input id="o2" type="number" placeholder="Grade" /></div>
+								<div class="small-5 columns"><label><br></label><input id="oo2" type="number" placeholder="%" /></div>
+								<div class="small-2 columns"></div>
+						</div>
+						<div class="row hide">
+								<div class="small-5 columns"><label for="o3">Others</label><input id="o3" type="number" placeholder="Grade" /></div>
+								<div class="small-5 columns"><label><br></label><input id="oo3" type="number" placeholder="%" /></div>
+								<div class="small-2 columns"></div>
+						</div>
+						<div class="row hide">
+								<div class="small-5 columns"><label for="o4">Others</label><input id="o4" type="number" placeholder="Grade" /></div>
+								<div class="small-5 columns"><label><br></label><input id="oo4" type="number" placeholder="%" /></div>
+								<div class="small-2 columns"></div>
+						</div>
+					</div>
+						<div class="row text-center">
+							<div class="large-12 columns">
+								<a href="#" id="initiate-calculation" class="button expand">Calculate</a>
+							</div>
+							<h3>Overall grade: <b>0</b></h3>
+							<div class="alert-box warning round" style="display:none">
+							The percentages must sum up to 100, not to <span>0</span>. Please check them.
+							</div>
+
+							<br><br><b>If the maximum grade in your exams is not 100 use the following tool (you can leave a max. score field blank if it is 100):</b><br><br>
+						</div>
+
+					</form>
+
+	<form id="nh">
+					<div class="mt">
+						<div class="row">
+								<div class="small-4 columns"><label for="nmt1">Midterm 1</label><input id="nmt1" type="number" placeholder="Grade" /></div>
+								<div class="small-4 columns"><label><br></label><input id="mttt1" type="number" placeholder="Max. score" /></div>
+								<div class="small-3 columns"><label><br></label><input id="mtt1" type="number" placeholder="%" /></div>
+								<div class="small-1 columns"><label><br></label><a style="height:2.3125rem; padding-top: .5rem"   class="button expand add" id="mt">+</a></div>
+						</div>
+						<div class="row hide">
+								<div class="small-4 columns"><label for="nmt2">Midterm 2</label><input id="nmt2" type="number" placeholder="Grade" /></div>
+								<div class="small-4 columns"><label><br></label><input id="mttt2" type="number" placeholder="Max. score" /></div>
+								<div class="small-3 columns"><label><br></label><input id="mtt2" type="number" placeholder="%" /></div>
+								<div class="small-1 columns"></div>
+						</div>
+						<div class="row hide">
+								<div class="small-4 columns"><label for="nmt3">Midterm 3</label><input id="nmt3" type="number" placeholder="Grade" /></div>
+								<div class="small-4 columns"><label><br></label><input id="mttt3" type="number" placeholder="Max. score" /></div>
+								<div class="small-3 columns"><label><br></label><input id="mtt3" type="number" placeholder="%" /></div>
+								<div class="small-1 columns"></div>
+						</div>
+						<div class="row hide">
+								<div class="small-4 columns"><label for="nmt4">Midterm 4</label><input id="nmt4" type="number" placeholder="Grade" /></div>
+								<div class="small-4 columns"><label><br></label><input id="mttt4" type="number" placeholder="Max. score" /></div>
+								<div class="small-3 columns"><label><br></label><input id="mtt4" type="number" placeholder="%" /></div>
+								<div class="small-1 columns"></div>
+						</div>
+					</div>
+						<div class="row">
+								<div class="small-4 columns"><label for="nfin">Final</label><input id="nfin" type="number" placeholder="Grade" /></div>
+								<div class="small-4 columns"><label><br></label><input id="finnn" type="number" placeholder="Max. score" /></div>
+								<div class="small-3 columns"><label><br></label><input id="finn" type="number" placeholder="%" /></div>
+								<div class="small-1 columns"></div>
+						</div>
+					<div class="other">
+						<div class="row">
+								<div class="small-4 columns"><label for="no1">Others</label><input id="no1" type="number" placeholder="Grade" /></div>
+								<div class="small-4 columns"><label><br></label><input id="ooo1" type="number" placeholder="Max. score" /></div>
+								<div class="small-3 columns"><label><br></label><input id="oo1" type="number" placeholder="%" /></div>
+								<div class="small-1 columns"><label><br></label><a style="height:2.3125rem; padding-top: .5rem"   class="button expand add" id="other">+</a></div>
+						</div>
+						<div class="row hide">
+								<div class="small-4 columns"><label for="no2">Others</label><input id="no2" type="number" placeholder="Grade" /></div>
+								<div class="small-4 columns"><label><br></label><input id="ooo2" type="number" placeholder="Max. score" /></div>
+								<div class="small-3 columns"><label><br></label><input id="oo2" type="number" placeholder="%" /></div>
+								<div class="small-1 columns"></div>
+						</div>
+						<div class="row hide">
+								<div class="small-4 columns"><label for="no3">Others</label><input id="no3" type="number" placeholder="Grade" /></div>
+								<div class="small-4 columns"><label><br></label><input id="ooo3" type="number" placeholder="Max. score" /></div>
+								<div class="small-3 columns"><label><br></label><input id="oo3" type="number" placeholder="%" /></div>
+								<div class="small-1 columns"></div>
+						</div>
+						<div class="row hide">
+								<div class="small-4 columns"><label for="no4">Others</label><input id="no4" type="number" placeholder="Grade" /></div>
+								<div class="small-4 columns"><label><br></label><input id="ooo4" type="number" placeholder="Max. score" /></div>
+								<div class="small-3 columns"><label><br></label><input id="oo4" type="number" placeholder="%" /></div>
+								<div class="small-1 columns"></div>
+						</div>
+					</div>
+						<div class="row text-center">
+							<div class="large-12 columns">
+								<a   id="initiate-calculation" class="button expand">Calculate</a>
+							</div>
+							<h3>Overall grade: <b>0</b></h3>
+							<div class="alert-box warning round" style="display:none">
+							The percentages must sum up to 100, not to <span>0</span>. Please check them.
+							</div>
+						</div>
+	</form>
+
+	<br>
+
+<table style="width:100%">
+<thead>
+<tr><th>Letter Grade</th>
+<th>Coefficient</th>
+<th>Score Intervals</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>AA</td>
+<td>4,00</td>
+<td>90-100</td>
+</tr><tr><td>BA</td>
+<td>3,50</td>
+<td>85-89</td>
+</tr><tr><td>BB</td>
+<td>3,00</td>
+<td>80-84</td>
+</tr><tr><td>CB</td>
+<td>2,50</td>
+<td>75-79</td>
+</tr><tr><td>CC</td>
+<td>2,00</td>
+<td>70-74</td>
+</tr><tr><td>DC</td>
+<td>1,50</td>
+<td>65-69</td>
+</tr><tr><td>DD</td>
+<td>1,00</td>
+<td>60-64</td>
+</tr><tr><td>FD</td>
+<td>0,50</td>
+<td>50-59</td>
+</tr><tr><td>FF</td>
+<td>0,00</td>
+<td>0-49</td>
+</tr><tr><td>NA</td>
+<td>0,00</td>
+<td>-</td>
+</tr></tbody>
+</table>
+
+</div>
+		
+	<div id="about-modal" class="reveal-modal tiny" data-reveal aria-labelledby="About" aria-hidden="true" role="dialog">
+		You can calculate overall grade of courses using this tool.<br/><br/>
+		Also, you can calculate average overall grade (curve) and compare it to your grade. <br><br>
+		If you encounter any problems: monurcan55@gmail.com<br/>
+	</div>
+	<script src="/inc/foundation/js/vendor/jquery.js"></script>
+	<script src="/inc/jquery-ui/jquery-ui.min.js"></script>
+	<script src="/inc/foundation/js/vendor/fastclick.js"></script>
+	<script src="/inc/foundation/js/foundation.min.js"></script>
+	<script>
+		$(document).foundation('reflow');
+		
+		$(document).ready(function() {
+			var mtnum = 0, othernum = 0;
+
+			$("#h #mt").on("click", function(){
+				if ($(this).hasClass("add")){
+					if(mtnum==2) $(this).removeClass("add").text("-");
+					$("#h .mt > div.row.hide:first").removeClass("hide");
+					mtnum++;
+				}else {
+					if(mtnum==1) $(this).addClass("add").text("+");
+					$("#h .mt > div.row:not(.hide):last").addClass("hide");
+					mtnum--;
+				}
+			});
+
+			$("#h #other").on("click", function(){
+				if ($(this).hasClass("add")){
+					if(othernum==2) $(this).removeClass("add").text("-");
+					$("#h .other > div.row.hide:first").removeClass("hide");
+					othernum++;
+				}else {
+					if(othernum==1) $(this).addClass("add").text("+");
+					$("#h .other > div.row:not(.hide):last").addClass("hide");
+					othernum--;
+				}
+			});
+
+			$("#h #initiate-calculation").click(function(){
+				$("#h .row.text-center h3 b").text($("#h #mt1").val()*$("#h #mtt1").val()/100+$("#h #mt2").val()*$("#h #mtt2").val()/100+$("#h #mt3").val()*$("#h #mtt3").val()/100+$("#h #mt4").val()*$("#h #mtt4").val()/100+$("#h #fin").val()*$("#h #finn").val()/100+$("#h #o1").val()*$("#h #oo1").val()/100+$("#h #o2").val()*$("#h #oo2").val()/100+$("#h #o3").val()*$("#h #oo3").val()/100+$("#h #o4").val()*$("#h #oo4").val()/100);
+
+				var total = parseFloatt($("#h #mtt1").val())+parseFloatt($("#h #mtt2").val())+parseFloatt($("#h #mtt3").val())+parseFloatt($("#h #mtt4").val())+parseFloatt($("#h #finn").val())+parseFloatt($("#h #oo1").val())+parseFloatt($("#h #oo2").val())+parseFloatt($("#h #oo3").val())+parseFloatt($("#h #oo4").val());
+				if(total != 100){
+					$("#h .warning").show().children("span").text(total);
+				}else $("#h .warning").hide();
+			});
+			function parseFloatt(number){
+				var res = isNaN(parseFloat(number)) ? 0 : parseFloat(number);
+				return res;
+			}
+
+
+
+			var nmtnum = 0, nothernum = 0;
+
+			$("#nh #mt").on("click", function(){
+				if ($(this).hasClass("add")){
+					if(nmtnum==2) $(this).removeClass("add").text("-");
+					$("#nh .mt > div.row.hide:first").removeClass("hide");
+					nmtnum++;
+				}else {
+					if(nmtnum==1) $(this).addClass("add").text("+");
+					$("#nh .mt > div.row:not(.hide):last").addClass("hide");
+					nmtnum--;
+				}
+			});
+
+			$("#nh #other").on("click", function(){
+				if ($(this).hasClass("add")){
+					if(nothernum==2) $(this).removeClass("add").text("-");
+					$("#nh .other > div.row.hide:first").removeClass("hide");
+					nothernum++;
+				}else {
+					if(nothernum==1) $(this).addClass("add").text("+");
+					$("#nh .other > div.row:not(.hide):last").addClass("hide");
+					nothernum--;
+				}
+			});
+
+			$("#nh #initiate-calculation").click(function(){
+				$("#nh .row.text-center h3 b").text($("#nh #nmt1").val()*$("#nh #mtt1").val()/parseBase($("#nh #mttt1").val())+$("#nh #nmt2").val()*$("#nh #mtt2").val()/parseBase($("#nh #mttt2").val())+$("#nh #nmt3").val()*$("#nh #mtt3").val()/parseBase($("#nh #mttt3").val())+$("#nh #nmt4").val()*$("#nh #mtt4").val()/parseBase($("#nh #mttt4").val())+$("#nh #nfin").val()*$("#nh #finn").val()/parseBase($("#nh #finnn").val())+$("#nh #no1").val()*$("#nh #oo1").val()/parseBase($("#nh #ooo1").val())+$("#nh #no2").val()*$("#nh #oo2").val()/parseBase($("#nh #ooo2").val())+$("#nh #no3").val()*$("#nh #oo3").val()/parseBase($("#nh #ooo3").val())+$("#nh #no4").val()*$("#nh #oo4").val()/parseBase($("#nh #ooo4").val()));
+
+				var total = parseFloatt($("#nh #mtt1").val())+parseFloatt($("#nh #mtt2").val())+parseFloatt($("#nh #mtt3").val())+parseFloatt($("#nh #mtt4").val())+parseFloatt($("#nh #finn").val())+parseFloatt($("#nh #oo1").val())+parseFloatt($("#nh #oo2").val())+parseFloatt($("#nh #oo3").val())+parseFloatt($("#nh #oo4").val());
+				if(total != 100){
+					$("#nh .warning").show().children("span").text(total);
+				}else $("#nh .warning").hide();
+			});
+			function parseFloatt(number){
+				var res = isNaN(parseFloat(number)) ? 0 : parseFloat(number);
+				return res;
+			}
+			function parseBase(number){
+				var res = isNaN(parseFloat(number)) ? 100 : parseFloat(number);
+				return res;
+			}
+		});
+	</script>
+</body>
+</html>

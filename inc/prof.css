@@ -1,0 +1,87 @@
+.sc-nav {
+  background-color: #8e44ad;
+  margin-bottom: 10px;
+}
+img[alt="www.000webhost.com"]{display:none;}
+.card-section {overflow: hidden;}
+.rating-block-rating {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.rating-block-rating .star {
+  stroke: #8e44ad;
+}
+
+.rating-block-rating .star.selected polygon {
+  fill: #8e44ad;
+}
+
+.rating-block-rating.is-voted .star polygon {
+  fill: #8e44ad;
+}
+
+.rating-block-rating.is-voted .star.selected ~ .star polygon {
+  fill: transparent;
+}
+
+.comment {
+  background-color: #ecf0f1;
+  margin-bottom: 20px!important;
+}
+
+.comment > .small-3 {
+  background-color: #e2e8e9;
+  overflow: hidden;
+}
+
+.comment > .small-3 > strong {
+  padding: 10px 15px;
+  border-bottom: 1px solid #c4d1d4;
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.comment > .small-3 > ul {
+  list-style-type: none;
+}
+
+.comment > .small-3 > ul li {
+  height: 35px;
+  font-weight: bold;
+}
+
+.comment > .small-3 > ul li strong {
+  padding: 9px;
+  background-color: #fff;
+  color: #f39c12;
+}
+
+.comment > .small-3 > ul li small {
+  padding-left: 9px;
+}
+
+.comment > .small-3 > ul li strong.s1, .comment > .small-3 > ul li strong.s2 {
+  color:#c0392b;
+}
+.comment > .small-3 > ul li strong.s5 {
+  color:#27ae60;
+}
+.comment > .small-9 {
+  min-height: 295px
+}
+.comment > .small-9 > p {
+  padding: 15px;
+  margin-bottom: 100px;
+}
+
+.comment > .small-9 table {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin-bottom: 0;
+}

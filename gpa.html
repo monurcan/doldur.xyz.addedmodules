@@ -1,0 +1,326 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Scheduler for METU courses.">
+	<meta name="keywords" content="METU,ODTÜ,schedule,scheduler">
+	<title>doldur.xyz</title>
+	<link rel="stylesheet" href="/inc/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="/inc/foundation/css/normalize.css">
+	<link rel="stylesheet" href="/inc/foundation/css/foundation.min.css">
+	<link rel="icon" type="image/png" href="/inc/img/fav.png">
+	<script src="/inc/foundation/js/vendor/modernizr.js"></script>
+	<style type="text/css">img[alt="www.000webhost.com"]{display:none;}</style>
+</head>
+<body>
+<nav class="top-bar" style="background-color: #8e44ad;" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="./"><b>doldur.xyz</b></a></h1>
+    </li>
+    <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="left">
+			
+					<li class=""><a href="#" data-reveal-id="about-modal">About</a></li>
+					<li class="has-dropdown">
+						<a href="#">Goodies</a>
+						<ul class="dropdown">
+							<li><a href="/">Scheduler</a></li>
+							<li><a href="courses.php">Course/Teacher Ratings</a></li>
+							<li><a href="https://oibs2.metu.edu.tr//View_Course_Capacity_158/main.php">Course Capacity</a></li>
+							<li><a href="grade.html">Grade Calculator</a></li>
+							<li><a href="http://105.metutrolls.com/">PHYS105 Solutions</a></li>
+						</ul>
+					</li>
+			
+    </ul>
+    <!-- Left Nav Section -->
+  </section>
+</nav>
+
+<div style="max-width:40rem" class="row ">
+
+<ul class="tabs" data-tab role="tablist">
+  <li class="tab-title active" role="presentation"><a href="#panel1" role="tab" tabindex="0" aria-selected="true" aria-controls="panel1">CGPA Estimator</a></li>
+  <li class="tab-title" role="presentation"><a href="#panel2" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2">Target GPA Calculator</a></li>
+</ul>
+<div class="tabs-content">
+  <section role="tabpanel" aria-hidden="false" class="content active" id="panel1">
+<div class="row">
+	<h4 class="text-center">Previous Coursework</h4>
+	
+		<form class="form-horizontal">
+			<div class="columns small-6">
+			<div class="form-group">
+				<label for="cgpa" class="col-sm-5 control-label">CGPA:</label>
+				<div class="col-sm-3">
+				    <input name ="cgpa" type="number" class="form-control" id="cgpa">
+				</div>
+			</div>
+			</div>
+			<div class="columns small-6">
+			<div class="form-group">
+				<label for="totCredit" class="col-sm-5 control-label">Total Credit:</label>
+				<div class="col-sm-3">
+				    <input name="totCredit" type="number" class="form-control" id="totCredit">
+				</div>
+			</div>
+			</div>
+		</form>
+</div>
+					
+		<h4 class="text-center">Grades</h4>
+		<div>
+			<table class="table gradesTable" style="width: 100%">
+				<thead >
+					<th>Courses</th>
+					<th>Credits</th>
+					<th>Grade</th>
+					<th>Old Grade</th>
+				</thead>
+				<tbody id="dynamicTable">
+					<tr>
+						<td class="Course" contenteditable="true"> Course 1</td>
+						<td>
+							<input class="form-control credits" type = "number" name="cr1" align="top" >
+						</td>
+						<td >
+							<select class="form-control newGrade"  name = "Grade1">
+								<option value=""></option>
+								<option value="AA">AA</option>
+								<option value="BA">BA</option>
+								<option value="BB">BB</option>
+								<option value="CB">CB</option>
+								<option value="CC">CC</option>
+								<option value="DC">DC</option>
+								<option value="DD">DD</option>
+								<option value="FD">FD</option>
+								<option value="FF">FF</option>
+								<option value="NA">NA</option>
+							</select>
+						</td>
+						<td>
+							<select class = "form-control oldGrade" name = "Grade1" >
+								<option value=""></option>
+								<option value="AA">AA</option>
+								<option value="BA">BA</option>
+								<option value="BB">BB</option>
+								<option value="CB">CB</option>
+								<option value="CC">CC</option>
+								<option value="DC">DC</option>
+								<option value="DD">DD</option>
+								<option value="FD">FD</option>
+								<option value="FF">FF</option>
+								<option value="NA">NA</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class= "Course" contenteditable="true">Course 2</td>
+						<td><input class="form-control credits" type = "number" name="cr2" align="top" ></td>
+						<td>
+							<select class = "form-control newGrade" name = "Grade2" >
+								<option value=""></option>
+								<option value="AA">AA</option>
+								<option value="BA">BA</option>
+								<option value="BB">BB</option>
+								<option value="CB">CB</option>
+								<option value="CC">CC</option>
+								<option value="DC">DC</option>
+								<option value="DD">DD</option>
+								<option value="FD">FD</option>
+								<option value="FF">FF</option>
+								<option value="NA">NA</option>
+							</select>
+						</td>
+						<td>
+							<select class = "form-control oldGrade" name = "Grade2" >
+								<option value=""></option>
+								<option value="AA">AA</option>
+								<option value="BA">BA</option>
+								<option value="BB">BB</option>
+								<option value="CB">CB</option>
+								<option value="CC">CC</option>
+								<option value="DC">DC</option>
+								<option value="DD">DD</option>
+								<option value="FD">FD</option>
+								<option value="FF">FF</option>
+								<option value="NA">NA</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class = "Course" contenteditable="true">Course 3</td>
+						<td><input class="form-control credits" type = "number" name="cr3" align="top" ></td>
+						<td>
+							<select class="form-control newGrade" name = "Grade3" >
+								<option value=""></option>
+								<option value="AA">AA</option>
+								<option value="BA">BA</option>
+								<option value="BB">BB</option>
+								<option value="CB">CB</option>
+								<option value="CC">CC</option>
+								<option value="DC">DC</option>
+								<option value="DD">DD</option>
+								<option value="FD">FD</option>
+								<option value="FF">FF</option>
+								<option value="NA">NA</option>
+							</select>
+						</td>
+						<td>
+							<select class="form-control oldGrade" name = "Grade3">
+								<option value=""></option>
+								<option value="AA">AA</option>
+								<option value="BA">BA</option>
+								<option value="BB">BB</option>
+								<option value="CB">CB</option>
+								<option value="CC">CC</option>
+								<option value="DC">DC</option>
+								<option value="DD">DD</option>
+								<option value="FD">FD</option>
+								<option value="FF">FF</option>
+								<option value="NA">NA</option>
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="row">
+			<div class="columns small-4">
+				<a class="button expand" onclick="addCourse('dynamicTable');">Add Course</a>
+			</div>
+			<div class="columns small-8">
+				<a class="button success expand" onclick="cgpaCalc()">Calculate</a>
+			</div>
+		</div>
+		
+		<div id="result" class="text-center">
+		</div>
+
+  </section>
+  <section role="tabpanel" aria-hidden="true" class="content" id="panel2">
+    Enter all fields to calculate what you'll need to target for your desired CGPA. <br><br>
+    <form>
+      <div class="row">
+        <div class="small-4 columns">
+          <label for="complete" class="inline"><strong>Credits/Units Completed</strong></label>
+        </div>
+        <div class="small-8 columns">
+          <input type="number" id="complete">
+        </div>
+      </div>
+           <div class="row">
+        <div class="small-4 columns">
+          <label for="current" class="inline"><strong>Current Cumulative GPA</strong></label>
+        </div>
+        <div class="small-8 columns">
+          <input type="number" id="current">
+        </div>
+      </div>
+           <div class="row">
+        <div class="small-4 columns">
+          <label for="remaining" class="inline"><strong>Credits/Units Remaining</strong></label>
+        </div>
+        <div class="small-8 columns">
+          <input type="number" id="remaining">
+        </div>
+      </div>
+           <div class="row">
+        <div class="small-4 columns">
+          <label for="desired" class="inline"><strong>Desired Cumulative GPA</strong></label>
+        </div>
+        <div class="small-8 columns">
+          <input type="number" id="desired">
+        </div>
+      </div>
+      <a class="button expand">Calculate</a>
+      <p class="text-center">Press the button to calculate necessary average GPA for desired CGPA.</p>
+    </form>
+  </section>
+</div>
+
+<table style="width:100%">
+<thead>
+<tr><th>Letter Grade</th>
+<th>Coefficient</th>
+<th>Score Intervals</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>AA</td>
+<td>4,00</td>
+<td>90-100</td>
+</tr><tr><td>BA</td>
+<td>3,50</td>
+<td>85-89</td>
+</tr><tr><td>BB</td>
+<td>3,00</td>
+<td>80-84</td>
+</tr><tr><td>CB</td>
+<td>2,50</td>
+<td>75-79</td>
+</tr><tr><td>CC</td>
+<td>2,00</td>
+<td>70-74</td>
+</tr><tr><td>DC</td>
+<td>1,50</td>
+<td>65-69</td>
+</tr><tr><td>DD</td>
+<td>1,00</td>
+<td>60-64</td>
+</tr><tr><td>FD</td>
+<td>0,50</td>
+<td>50-59</td>
+</tr><tr><td>FF</td>
+<td>0,00</td>
+<td>0-49</td>
+</tr><tr><td>NA</td>
+<td>0,00</td>
+<td>-</td>
+</tr></tbody>
+</table>
+
+</div>
+		
+	<div id="about-modal" class="reveal-modal tiny" data-reveal aria-labelledby="About" aria-hidden="true" role="dialog">
+		A tool to calculate GPA and CGPA. <br><br>If you encounter any problems: monurcan55@gmail.com<br/>
+	</div>
+	<script src="/inc/foundation/js/vendor/jquery.js"></script>
+	<script src="/inc/jquery-ui/jquery-ui.min.js"></script>
+	<script src="/inc/foundation/js/vendor/fastclick.js"></script>
+	<script src="/inc/foundation/js/foundation.min.js"></script>
+	<script>
+		$(document).foundation('reflow');
+		
+		$(document).ready(function() {
+			
+			$("#panel2 .button").click(function(){
+				var complete = parseFloatt($("#complete").val());
+				var current = parseFloatt($("#current").val());
+				var remaining = parseFloatt($("#remaining").val());
+				var desired = parseFloatt($("#desired").val());
+				var res = ((complete+remaining)*desired-complete*current)/remaining;
+				if(isNaN(res)) $(this).siblings("p").text("Cannot calculate, please check the values.");
+				else if(res > 4 || res < 0) $(this).siblings("p").html("To obtain your desired Cumulative GPA, you need to get an average GPA of <b>"+res+"</b> over your remaining "+remaining+" credits. So, it <b>is not possible</b> to be achieved with remaining "+remaining+" credits.");
+				else $(this).siblings("p").html("To obtain your desired Cumulative GPA, you need to get an average GPA of <b>"+res+"</b> over your remaining "+remaining+" credits.");
+
+			});
+
+			function parseFloatt(number){
+				var res = isNaN(parseFloat(number)) ? 0 : parseFloat(number);
+				return res;
+			}
+			
+		});
+
+		function gpaCalc(){var t=document.getElementsByClassName("newGrade"),e=document.getElementsByClassName("credits"),o=0,n=0;for(i=0;i<t.length;i++){var l=t[i],a=e[i].value,r=Number(a);grade=letterToCoefficient(l.options[l.selectedIndex].text),o+=r*grade,n+=r}var s=o/n;return 0===n?0:s.toFixed(2)}function cgpaCalc(){var t=document.getElementById("cgpa").value,e=document.getElementById("totCredit").value,o=document.getElementsByClassName("oldGrade"),n=document.getElementsByClassName("credits"),l=0,a=0,r=Number(t)*Number(e);for(i=0;i<o.length;i++){var s=n[i].value,c=Number(s),d=o[i].options[o[i].selectedIndex].text;d?(grade=letterToCoefficient(d),r-=c*grade):a+=c,l+=c}var p=Number(e)+a;if(0==p)u=0;else if((u=((gpaCalc()*l+r)/p).toFixed(2))>=4)var u=4..toFixed(2);gpaCalc()>=3&&gpaCalc()<3.5?(document.getElementById("result").innerHTML='<h4>Results</h4><div class="alert-box success"><h4 style="color:#fff; font-weight:bold">GPA: '+gpaCalc().toString()+'</h4><h4 style="color:#fff; font-weight:bold">CGPA: '+u.toString()+'</h4><p>Congratulations! It seems that you are an honor student for this semester.</p></div>',window.scrollTo(1e3,1e3)):gpaCalc()>=3.5?(document.getElementById("result").innerHTML='<h4>Results</h4><div class="alert-box success"><h4 style="color:#fff; font-weight:bold">GPA: '+gpaCalc().toString()+'</h4><h4 style="color:#fff; font-weight:bold">CGPA: '+u.toString()+'</h4><p>Congratulations! It seems that you are a high honor student for this semester.</p></div>',window.scrollTo(1e3,1e3)):(document.getElementById("result").innerHTML='<h4>Results</h4><div class="alert-box success"><h4 style="color:#fff; font-weight:bold">GPA: '+gpaCalc().toString()+'</h4><h4 style="color:#fff; font-weight:bold">CGPA: '+u.toString()+"</h4></div>",window.scrollTo(1e3,1e3))}function letterToCoefficient(t){var e={};return e[""]=0,e.AA=4,e.BA=3.5,e.BB=3,e.CB=2.5,e.CC=2,e.DC=1.5,e.DD=1,e.FD=.5,e.FF=0,e.NA=0,e[t]}function addCourse(t){if(counter<20){var e=document.createElement("tr");e.innerHTML="<td = class='Course' contenteditable='true'> Course "+(counter+1).toString()+"</td><td><input class='form-control credits' type = 'number'  name='cr1' align='top'></td> \t\t<td> \t\t<select class='form-control newGrade' name = 'Grade2'> \t\t\t\t<option value=''></option> \t\t\t\t<option value='AA'>AA</option> \t\t\t\t<option value='BA'>BA</option> \t\t\t\t<option value='BB'>BB</option> \t\t\t\t<option value='CB'>CB</option> \t\t\t\t<option value='CC'>CC</option> \t\t\t\t<option value='DC'>DC</option> \t\t\t\t<option value='DD'>DD</option> \t\t\t\t<option value='FD'>FD</option> \t\t\t\t<option value='FF'>FF</option> \t\t\t\t<option value='NA'>NA</option> \t\t\t</select> \t\t</td>\t\t<td>\t\t\t<select class='form-control oldGrade' name = 'Grade2'> \t\t\t\t<option value=''></option> \t\t\t\t<option value='AA'>AA</option> \t\t\t\t<option value='BA'>BA</option> \t\t\t\t<option value='BB'>BB</option> \t\t\t\t<option value='CB'>CB</option> \t\t\t\t<option value='CC'>CC</option> \t\t\t\t<option value='DC'>DC</option> \t\t\t\t<option value='DD'>DD</option> \t\t\t\t<option value='FD'>FD</option> \t\t\t\t<option value='FF'>FF</option> \t\t\t\t<option value='NA'>NA</option> \t\t\t</select> \t\t</td>",document.getElementById(t).appendChild(e),counter++}}counter=4;
+	</script>
+</body>
+</html>
