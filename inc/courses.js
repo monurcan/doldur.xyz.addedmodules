@@ -61,7 +61,7 @@ $(function(){
 			var past;
 			for(var j = 0; j < course_data[i]["s"].length && l < 15; j++){
 				if(course_data[i]["s"][j]["i"][0] != "STAFF" && past != course_data[i]["s"][j]["i"][0] && course_data[i]["s"][j]["i"][0].toLowerCase().indexOf(inp.toLowerCase()) !== -1) {
-					result.push([true, i, j]);
+					result.push([true, course_data[i]["s"][j]["i"][0]]);
 					past = course_data[i]["s"][j]["i"][0];
 					l++;
 				}
@@ -196,15 +196,25 @@ $(function(){
 			var inp = request.term;
 			//var result_idxs = bsearch(inp,0,course_data.length-1);
 			var result_idxs = normal_search(inp);
-			// if(result_idxs.length == 0) {
-			// 	result_idxs = normal_search(inp);
-			// }
-			var response_array = [];
-			for(var i = 0; i<result_idxs.length; i++) {
-				var label = result_idxs[i][0] ? course_data[result_idxs[i][1]]['s'][result_idxs[i][2]]['i'][0] : course_data[result_idxs[i][1]]['n'];
-				response_array.push({value: label, courseId:result_idxs[i][1], isProf: result_idxs[i][0]});
+			if(result_idxs.length == 0) {
+				$.ajax({
+					method: "POST",
+					url: "search_db.php",
+					data: { inp: inp.toUpperCase().hashCode() },
+					dataType: 'json'
+				}).done(function( msg ) {
+					if(msg) {
+						response([{value: inp.toUpperCase(), isProf: true}]);
+					}
+				});
+			}else {
+				var response_array = [];
+				for(var i = 0; i<result_idxs.length; i++) {
+					var label = result_idxs[i][0] ? result_idxs[i][1] : course_data[result_idxs[i][1]]['n'];
+					response_array.push({value: label, courseId:result_idxs[i][1], isProf: result_idxs[i][0]});
+				}
+				response(response_array);
 			}
-			response(response_array);
 		},
 		select: function(event, ui) {
 			event.preventDefault();
