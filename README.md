@@ -5,6 +5,6 @@ doldur.xyz w/ some new tools
 - gpa tool
 - grade tool
 
-demo: https://doldurxyz.000webhostapp.com
+demo: doldur.ml
 
 to install, execute comments.sql first.
